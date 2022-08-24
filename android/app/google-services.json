@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "896241300467",
+    "project_id": "riyads-first-note-app",
+    "storage_bucket": "riyads-first-note-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896241300467:android:a2a94698dbb75384009886",
+        "android_client_info": {
+          "package_name": "com.example.notes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896241300467-7tik8ttdedps8g1p0lmlte659iq4mk1n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4wdvOXTC5OGpptpSSr0KzT__zJq35UvI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "896241300467-7tik8ttdedps8g1p0lmlte659iq4mk1n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
