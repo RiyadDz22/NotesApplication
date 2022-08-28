@@ -21,6 +21,7 @@ void main() {
       routes: {
         '/login/' : (context) => const LoginView(),
         '/register/' : (context) => const RegisterView(),
+        '/notes/' : (context) => const NotesView(),
       },
     ),
   );
@@ -52,7 +53,9 @@ class HomePage extends StatelessWidget {
             return const LoginView();
           }
          default:
-            return const CircularProgressIndicator();
+           return Scaffold(
+             body: const CircularProgressIndicator(),
+           );
         }
       },
     );
