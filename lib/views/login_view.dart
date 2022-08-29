@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'dart:developer' as dev;
 import 'package:notes/constants/routes.dart';
+
+import '../utilities/show_error_dialog.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -30,50 +31,60 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: const Text('Login'),centerTitle: true,),
-    body: Column(
-      children: [
-        TextField(
-          controller: _email,
-          enableSuggestions: false,
-          autocorrect: false,
-          keyboardType: TextInputType.emailAddress,
-          decoration: const InputDecoration(
-            hintText: 'Enter your e-mail',
-          ),
+        appBar: AppBar(
+          title: const Text('Login'),
+          centerTitle: true,
         ),
-        TextField(
-          controller: _password,
-          obscureText: true,
-          enableSuggestions: false,
-          autocorrect: false,
-          decoration: const InputDecoration(hintText: 'Enter a password'),
+        body: Column(
+          children: [
+            TextField(
+              controller: _email,
+              enableSuggestions: false,
+              autocorrect: false,
+              keyboardType: TextInputType.emailAddress,
+              decoration: const InputDecoration(
+                hintText: 'Enter your e-mail',
+              ),
+            ),
+            TextField(
+              controller: _password,
+              obscureText: true,
+              enableSuggestions: false,
+              autocorrect: false,
+              decoration: const InputDecoration(hintText: 'Enter a password'),
+            ),
+            TextButton(
+              onPressed: () async {
+                final email = _email.text;
+                final password = _password.text;
+                try {
+                  await FirebaseAuth.instance.signInWithEmailAndPassword(
+                      email: email, password: password);
+                  Navigator.of(context)
+                      .pushNamedAndRemoveUntil(notesRoute, (route) => false);
+                } on FirebaseAuthException catch (e) {
+                  if (e.code == 'user-not-found') {
+                    showErrorDialog(context, 'user not found');
+                  } else if (e.code == 'wrong-password') {
+                    showErrorDialog(context, 'Password is Wrong');
+                  } else {
+                    showErrorDialog(context, 'Error: ${e.code}');
+                  }
+                } catch(e){
+                  showErrorDialog(context, e.toString(),);
+                }
+              },
+              child: const Text('Login'),
+            ),
+            TextButton(
+                onPressed: () {
+                  Navigator.of(context)
+                      .pushNamedAndRemoveUntil(registerRoute, (route) => false);
+                },
+                child: const Text('Register Here'))
+          ],
         ),
-        TextButton(
-          onPressed: () async {
-            final email = _email.text;
-            final password = _password.text;
-            try {
-              await FirebaseAuth.instance
-                  .signInWithEmailAndPassword(
-                  email: email,
-                  password: password);
-              Navigator.of(context).pushNamedAndRemoveUntil(notesRoute, (route) => false);
-            } on FirebaseAuthException catch (e){
-              if(e.code == 'user-not-found'){
-                dev.log('something went wrong ');
-                dev.log('user not found');
-              } else if (e.code == 'wrong-password'){
-                dev.log('wrong password');
-              }
-            }
-          },
-          child: const Text('Login'),
-        ),
-        TextButton(onPressed: (){
-          Navigator.of(context).pushNamedAndRemoveUntil(registerRoute, (route) => false);
-        }, child: const Text('Register Here'))
-      ],
-    ),
-  );
+      );
 }
+
+

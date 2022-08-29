@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'dart:developer' as dev;
-
 import 'package:notes/constants/routes.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({Key? key}) : super(key: key);
+
   @override
   State<RegisterView> createState() => _RegisterViewState();
 }
@@ -31,7 +31,10 @@ class _RegisterViewState extends State<RegisterView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Register'), centerTitle: true,),
+      appBar: AppBar(
+        title: const Text('Register'),
+        centerTitle: true,
+      ),
       body: Column(
         children: [
           TextField(
@@ -54,24 +57,29 @@ class _RegisterViewState extends State<RegisterView> {
             onPressed: () async {
               final email = _email.text;
               final password = _password.text;
-              try{
+              try {
                 final userCredential = await FirebaseAuth.instance
                     .createUserWithEmailAndPassword(
-                    email: email, password: password);
+                        email: email, password: password);
                 dev.log(userCredential.toString());
-              } on FirebaseAuthException catch (e){
-                if (e.code == 'weak-password'){
+              } on FirebaseAuthException catch (e) {
+                if (e.code == 'weak-password') {
                   dev.log('the password is weak');
-                } else if(e.code == 'email-already-in-use'){
+                } else if (e.code == 'email-already-in-use') {
                   dev.log('this email is already used');
-                } else{dev.log('invalid email');}
+                } else {
+                  dev.log('invalid email');
+                }
               }
             },
             child: const Text('Register'),
           ),
-          TextButton(onPressed: (){
-            Navigator.of(context).pushNamedAndRemoveUntil(loginRoute, (route) => false);
-          }, child: const Text('Login here'))
+          TextButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .pushNamedAndRemoveUntil(loginRoute, (route) => false);
+              },
+              child: const Text('Login here'))
         ],
       ),
     );
