@@ -1,4 +1,4 @@
-#Mon Aug 29 16:13:02 WEST 2022
+#Mon Aug 29 22:12:45 WEST 2022
 base.2=C\:\\Users\\riyad\\Desktop\\NewApp\\notes\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
 path.2=classes3.dex
 base.1=C\:\\Users\\riyad\\Desktop\\NewApp\\notes\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
