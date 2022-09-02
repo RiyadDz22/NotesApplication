@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 # testProject
-testing repo for learning perpose | flutter project | notes app
+testing repo for learning purpose | flutter project | notes app
 =======
 # notes
 
