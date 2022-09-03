@@ -21,6 +21,7 @@ void main() {
         notesRoute: (context) => const NotesView(),
         emailVerify: (context) => const VerifyEmailView(),
       },
+      debugShowCheckedModeBanner: false,
     ),
   );
 }
