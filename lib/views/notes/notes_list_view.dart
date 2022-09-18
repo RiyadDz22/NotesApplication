@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import '../../services/crud/notes_service.dart';
 import '../../utilities/dialogs/delete_dialog.dart';
 
-typedef DeleteNoteCallBack = void Function(DatabaseNotes notes);
+typedef NoteCallBack = void Function(DatabaseNotes notes);
 
 class NotesListView extends StatelessWidget {
   final List<DatabaseNotes> notes;
-  final DeleteNoteCallBack onDeleteNote;
-  const NotesListView({Key? key, required this.notes, required this.onDeleteNote}) : super(key: key);
+  final NoteCallBack onDeleteNote;
+  final NoteCallBack onTap;
+
+  const NotesListView({Key? key, required this.notes, required this.onDeleteNote, required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +18,9 @@ class NotesListView extends StatelessWidget {
       itemBuilder: (context, index){
         final note = notes[index];
         return ListTile(
+          onTap:(){
+            onTap(note);
+          },
           title: Text(
             note.text,
             maxLines: 1,
