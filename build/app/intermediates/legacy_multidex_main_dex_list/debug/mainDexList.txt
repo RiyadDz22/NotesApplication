@@ -17,11 +17,14 @@ androidx/annotation/ColorRes.class
 androidx/annotation/ContentView.class
 androidx/annotation/DimenRes.class
 androidx/annotation/Dimension.class
+androidx/annotation/Discouraged.class
+androidx/annotation/DisplayContext.class
 androidx/annotation/DoNotInline.class
 androidx/annotation/DrawableRes.class
 androidx/annotation/FloatRange.class
 androidx/annotation/FontRes.class
 androidx/annotation/FractionRes.class
+androidx/annotation/GravityInt.class
 androidx/annotation/GuardedBy.class
 androidx/annotation/HalfFloat.class
 androidx/annotation/IdRes.class
@@ -40,6 +43,7 @@ androidx/annotation/MainThread.class
 androidx/annotation/MenuRes.class
 androidx/annotation/NavigationRes.class
 androidx/annotation/NonNull.class
+androidx/annotation/NonUiContext.class
 androidx/annotation/Nullable.class
 androidx/annotation/OptIn.class
 androidx/annotation/PluralsRes.class
@@ -60,6 +64,7 @@ androidx/annotation/StringRes.class
 androidx/annotation/StyleRes.class
 androidx/annotation/StyleableRes.class
 androidx/annotation/TransitionRes.class
+androidx/annotation/UiContext.class
 androidx/annotation/UiThread.class
 androidx/annotation/VisibleForTesting.class
 androidx/annotation/WorkerThread.class
@@ -84,10 +89,12 @@ androidx/core/app/NotificationCompat$Action$SemanticAction.class
 androidx/core/app/NotificationCompat$BadgeIconType.class
 androidx/core/app/NotificationCompat$GroupAlertBehavior.class
 androidx/core/app/NotificationCompat$NotificationVisibility.class
+androidx/core/app/NotificationCompat$ServiceNotificationBehavior.class
 androidx/core/app/NotificationCompat$StreamType.class
 androidx/core/app/RemoteInput$EditChoicesBeforeSending.class
 androidx/core/app/RemoteInput$Source.class
 androidx/core/app/ServiceCompat$StopForegroundFlags.class
+androidx/core/content/PackageManagerCompat$UnusedAppRestrictionsStatus.class
 androidx/core/content/PermissionChecker$PermissionResult.class
 androidx/core/content/pm/PermissionInfoCompat$Protection.class
 androidx/core/content/pm/PermissionInfoCompat$ProtectionFlags.class
@@ -95,7 +102,9 @@ androidx/core/content/pm/ShortcutManagerCompat$ShortcutMatchFlags.class
 androidx/core/content/res/FontResourcesParserCompat$FetchStrategy.class
 androidx/core/graphics/drawable/IconCompat$IconType.class
 androidx/core/location/GnssStatusCompat$ConstellationType.class
+androidx/core/location/LocationRequestCompat$Quality.class
 androidx/core/net/ConnectivityManagerCompat$RestrictBackgroundStatus.class
+androidx/core/os/TraceKt.class
 androidx/core/provider/FontsContractCompat$FontRequestCallback$FontRequestFailReason.class
 androidx/core/text/util/LinkifyCompat$LinkifyMask.class
 androidx/core/view/ContentInfoCompat$Flags.class

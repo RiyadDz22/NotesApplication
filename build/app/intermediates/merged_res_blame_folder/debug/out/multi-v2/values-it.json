@@ -21,6 +21,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\riyad\\.gradle\\caches\\transforms-3\\5e083c06c9925c2309f02468fc66e376\\transformed\\core-1.7.0\\res\\values-it\\values-it.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "24",
+                        "startColumns": "4",
+                        "startOffsets": "2688",
+                        "endColumns": "100",
+                        "endOffsets": "2784"
+                    }
+                },
+                {
                     "source": "C:\\Users\\riyad\\.gradle\\caches\\transforms-3\\05304738454a7c6fee076a188df4c25d\\transformed\\browser-1.4.0\\res\\values-it\\values-it.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -52,23 +69,6 @@
                         "startOffsets": "1054",
                         "endColumns": "135",
                         "endOffsets": "1185"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\riyad\\.gradle\\caches\\transforms-3\\acbce933e4b464a5224ed377a62db1f5\\transformed\\core-1.6.0\\res\\values-it\\values-it.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "24",
-                        "startColumns": "4",
-                        "startOffsets": "2688",
-                        "endColumns": "100",
-                        "endOffsets": "2784"
                     }
                 }
             ]

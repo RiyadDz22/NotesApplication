@@ -3,6 +3,9 @@ import 'package:notes/services/auth/auth_service.dart';
 import 'package:notes/utilities/generics/get_arguments.dart';
 import 'package:notes/services/cloud/cloud_note.dart';
 import 'package:notes/services/cloud/firebase_cloud_storage.dart.dart';
+import 'package:share_plus/share_plus.dart';
+
+import '../../utilities/dialogs/cannot_share_empty_dialog.dart';
 
 
 
@@ -88,6 +91,16 @@ class _CreateUpdateNoteViewState extends State<CreateUpdateNoteView> {
       appBar: AppBar(
         title: const Text('new note'),
       centerTitle: true,
+        actions: [
+          IconButton(onPressed: () async {
+            final text = _textController.text;
+            if(_note == null || text.isEmpty){
+              await showCannotShareEmptyNoteDialog(context);
+            } else {
+              Share.share(text);
+            }
+          }, icon: const Icon(Icons.share)),
+        ],
       ),
       body: FutureBuilder(
         future: createOrGetExistingNote(context),
